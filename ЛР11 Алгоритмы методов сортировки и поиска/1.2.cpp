@@ -24,7 +24,7 @@ static student* mas, t;
 static int* a; 
 static int* a1;
 
-//ЗАГРУЗКА ДАННЫХ СТРУКТУРЫ ИЗ ФАЙЛА
+//Р—РђР“Р РЈР—РљРђ Р”РђРќРќР«РҐ РЎРўР РЈРљРўРЈР Р« РР— Р¤РђР™Р›Рђ
 extern int loadFromFile()
 {
 	int k;
@@ -32,7 +32,7 @@ extern int loadFromFile()
 	fin.open(path);
 	if (!fin.is_open())
 	{
-		cout << "Файл для структуры не существует или не может быть открыт!\n";
+		cout << "Р¤Р°Р№Р» РґР»СЏ СЃС‚СЂСѓРєС‚СѓСЂС‹ РЅРµ СЃСѓС‰РµСЃС‚РІСѓРµС‚ РёР»Рё РЅРµ РјРѕР¶РµС‚ Р±С‹С‚СЊ РѕС‚РєСЂС‹С‚!\n";
 		cout << "__________________________________" << endl << endl << endl;
 			return 0;
 	}
@@ -40,15 +40,15 @@ extern int loadFromFile()
 	{
 		fin >> k;
 
-		//Выделение памяти
+		//Р’С‹РґРµР»РµРЅРёРµ РїР°РјСЏС‚Рё
 		if (!(mas = (student*)malloc(k * sizeof(student))))
 		{
-			cout << "Недостаточно памяти!";
+			cout << "РќРµРґРѕСЃС‚Р°С‚РѕС‡РЅРѕ РїР°РјСЏС‚Рё!";
 			fin.close();
 			return -1;
 		}
 
-		//Считывание данных
+		//РЎС‡РёС‚С‹РІР°РЅРёРµ РґР°РЅРЅС‹С…
 		for (register int i = 0; i < k; i++)
 		{
 			fin >> mas[i].fam >> mas[i].im >> mas[i].otch >> mas[i].inc
@@ -56,21 +56,21 @@ extern int loadFromFile()
 				>> mas[i].marks[0] >> mas[i].marks[1] >> mas[i].marks[2];
 		}
 		fin.close();
-		cout << "Данные для структуры успешно загружены из файла.\n";
+		cout << "Р”Р°РЅРЅС‹Рµ РґР»СЏ СЃС‚СЂСѓРєС‚СѓСЂС‹ СѓСЃРїРµС€РЅРѕ Р·Р°РіСЂСѓР¶РµРЅС‹ РёР· С„Р°Р№Р»Р°.\n";
 		cout << "__________________________________" << endl << endl << endl;
 		return k;
 	}
 }
 
 
-//СОХРАНЕНИЕ ДАННЫХ СТРУКТУРЫ В ФАЙЛ
+//РЎРћРҐР РђРќР•РќРР• Р”РђРќРќР«РҐ РЎРўР РЈРљРўРЈР Р« Р’ Р¤РђР™Р›
 extern void saveToFile(int sch)
 {
 	ofstream fout;
 	fout.open(path);
 	if (!fout.is_open())
 	{
-		cout << "Ошибка сохранения данных структуры в файл!" << endl;
+		cout << "РћС€РёР±РєР° СЃРѕС…СЂР°РЅРµРЅРёСЏ РґР°РЅРЅС‹С… СЃС‚СЂСѓРєС‚СѓСЂС‹ РІ С„Р°Р№Р»!" << endl;
 		return;
 	}
 	else
@@ -84,20 +84,20 @@ extern void saveToFile(int sch)
 		}
 	}
 	fout.close();
-	cout << "\nДанные структуры успешно сохранены в файл!\n";
+	cout << "\nР”Р°РЅРЅС‹Рµ СЃС‚СЂСѓРєС‚СѓСЂС‹ СѓСЃРїРµС€РЅРѕ СЃРѕС…СЂР°РЅРµРЅС‹ РІ С„Р°Р№Р»!\n";
 	cout << "__________________________________" << endl;
 	free(mas);
 }
 
 
-//СОХРАНЕНИЕ МАССИВА
+//РЎРћРҐР РђРќР•РќРР• РњРђРЎРЎРР’Рђ
 extern void saveToFileMas(int count)
 {
 	ofstream fout;
 	fout.open("mas.txt");
 	if (!fout.is_open())
 	{
-		cout << "Ошибка сохранения данных массива в файл!" << endl;
+		cout << "РћС€РёР±РєР° СЃРѕС…СЂР°РЅРµРЅРёСЏ РґР°РЅРЅС‹С… РјР°СЃСЃРёРІР° РІ С„Р°Р№Р»!" << endl;
 		return;
 	}
 	else
@@ -109,25 +109,25 @@ extern void saveToFileMas(int count)
 		}
 	}
 	fout.close();
-	cout << "\nДанные массива успешно сохранены в файл!\n";
-	cout << "Выход...\n";
+	cout << "\nР”Р°РЅРЅС‹Рµ РјР°СЃСЃРёРІР° СѓСЃРїРµС€РЅРѕ СЃРѕС…СЂР°РЅРµРЅС‹ РІ С„Р°Р№Р»!\n";
+	cout << "Р’С‹С…РѕРґ...\n";
 	cout << "__________________________________" << endl;
 	delete[] a;
 	delete[] a1;
 }
 
 
-//ГЕНЕРАЦИЯ МАССИВА
+//Р“Р•РќР•Р РђР¦РРЇ РњРђРЎРЎРР’Рђ
 extern int generate_array()
 {
 	register int n;
-	cout << "Введите длинну генерируемого массива (долна быть больше 10): ";
+	cout << "Р’РІРµРґРёС‚Рµ РґР»РёРЅРЅСѓ РіРµРЅРµСЂРёСЂСѓРµРјРѕРіРѕ РјР°СЃСЃРёРІР° (РґРѕР»РЅР° Р±С‹С‚СЊ Р±РѕР»СЊС€Рµ 10): ";
 	cin >> n;
 	while (n<=10 || cin.fail() || cin.peek() != '\n')
 	{
 		cin.clear();
 		cin.ignore(1000, '\n');
-		cout << "Ошибка ввода: длинна генерируемого массива должна быть целым положительным числом больше 10. Повторный ввод: ";
+		cout << "РћС€РёР±РєР° РІРІРѕРґР°: РґР»РёРЅРЅР° РіРµРЅРµСЂРёСЂСѓРµРјРѕРіРѕ РјР°СЃСЃРёРІР° РґРѕР»Р¶РЅР° Р±С‹С‚СЊ С†РµР»С‹Рј РїРѕР»РѕР¶РёС‚РµР»СЊРЅС‹Рј С‡РёСЃР»РѕРј Р±РѕР»СЊС€Рµ 10. РџРѕРІС‚РѕСЂРЅС‹Р№ РІРІРѕРґ: ";
 		cin >> n;
 	}
 
@@ -142,17 +142,17 @@ extern int generate_array()
 }
 
 
-//РЕГЕНЕРАЦИЯ МАССИВА
+//Р Р•Р“Р•РќР•Р РђР¦РРЇ РњРђРЎРЎРР’Рђ
 extern int regenerate_array()
 {
 	register int n;
-	cout << "\nВведите длинну регенерируемого массива (долна быть больше 10): ";
+	cout << "\nР’РІРµРґРёС‚Рµ РґР»РёРЅРЅСѓ СЂРµРіРµРЅРµСЂРёСЂСѓРµРјРѕРіРѕ РјР°СЃСЃРёРІР° (РґРѕР»РЅР° Р±С‹С‚СЊ Р±РѕР»СЊС€Рµ 10): ";
 	cin >> n;
 	while (n <= 10 || cin.fail() || cin.peek() != '\n')
 	{
 		cin.clear();
 		cin.ignore(1000, '\n');
-		cout << "Ошибка ввода: длинна регенерируемого массива должна быть целым положительным числом больше 10. Повторный ввод: ";
+		cout << "РћС€РёР±РєР° РІРІРѕРґР°: РґР»РёРЅРЅР° СЂРµРіРµРЅРµСЂРёСЂСѓРµРјРѕРіРѕ РјР°СЃСЃРёРІР° РґРѕР»Р¶РЅР° Р±С‹С‚СЊ С†РµР»С‹Рј РїРѕР»РѕР¶РёС‚РµР»СЊРЅС‹Рј С‡РёСЃР»РѕРј Р±РѕР»СЊС€Рµ 10. РџРѕРІС‚РѕСЂРЅС‹Р№ РІРІРѕРґ: ";
 		cin >> n;
 	}
 	delete[] a;
@@ -168,7 +168,7 @@ extern int regenerate_array()
 }
 
 
-//ПЕРЕСТАНОВКА
+//РџР•Р Р•РЎРўРђРќРћР’РљРђ
  extern void swap(int *x, int *y)
 {
 	int t;
@@ -176,7 +176,7 @@ extern int regenerate_array()
 }
 
 
- //КОПИРОВАНИЕ МАССИВА 
+ //РљРћРџРР РћР’РђРќРР• РњРђРЎРЎРР’Рђ 
  extern void cop(int count)
  {
 	 for (register int i = 0; i < count; i++)
@@ -184,7 +184,7 @@ extern int regenerate_array()
  }
 
 
-//ВЫВОД ПЕРВЫХ 10 ЭЛЕМЕНТОВ
+//Р’Р«Р’РћР” РџР•Р Р’Р«РҐ 10 Р­Р›Р•РњР•РќРўРћР’
  extern void out()
  {
 	 for (register int i = 0; i < 10; i++)
@@ -194,7 +194,7 @@ extern int regenerate_array()
  }
 
 
- //СОРТИРОВКА ПУЗЫРЬКОМ
+ //РЎРћР РўРР РћР’РљРђ РџРЈР—Р«Р Р¬РљРћРњ
  extern void bubble_sort(int count)
  {
 	 register int i, j;
@@ -208,13 +208,13 @@ extern int regenerate_array()
 
 	 auto end = high_resolution_clock::now();
 	 duration<double> interval = end - start;
-	 cout << "\nВремя затраченное на сортировку методом пузырька: " << fixed << setprecision(2) << interval.count() << " секунд" << endl;
-	 cout << "Первые 10 элементов отсортированного массива:" << endl;
+	 cout << "\nР’СЂРµРјСЏ Р·Р°С‚СЂР°С‡РµРЅРЅРѕРµ РЅР° СЃРѕСЂС‚РёСЂРѕРІРєСѓ РјРµС‚РѕРґРѕРј РїСѓР·С‹СЂСЊРєР°: " << fixed << setprecision(2) << interval.count() << " СЃРµРєСѓРЅРґ" << endl;
+	 cout << "РџРµСЂРІС‹Рµ 10 СЌР»РµРјРµРЅС‚РѕРІ РѕС‚СЃРѕСЂС‚РёСЂРѕРІР°РЅРЅРѕРіРѕ РјР°СЃСЃРёРІР°:" << endl;
 	 out();
  }
 
 
- //СОРТИРОВКА ВЫБОРОМ
+ //РЎРћР РўРР РћР’РљРђ Р’Р«Р‘РћР РћРњ
  extern void min_sort(int count)
  {
 	 register int k, i, j;
@@ -234,13 +234,13 @@ extern int regenerate_array()
 
 	 auto end = high_resolution_clock::now();
 	 duration<double> interval = end - start;
-	 cout << "\nВремя затраченное на сортировку методом выбора: " << fixed << setprecision(2) << interval.count() << " секунд" << endl;
-	 cout << "Первые 10 элементов отсортированного массива:" << endl;
+	 cout << "\nР’СЂРµРјСЏ Р·Р°С‚СЂР°С‡РµРЅРЅРѕРµ РЅР° СЃРѕСЂС‚РёСЂРѕРІРєСѓ РјРµС‚РѕРґРѕРј РІС‹Р±РѕСЂР°: " << fixed << setprecision(2) << interval.count() << " СЃРµРєСѓРЅРґ" << endl;
+	 cout << "РџРµСЂРІС‹Рµ 10 СЌР»РµРјРµРЅС‚РѕРІ РѕС‚СЃРѕСЂС‚РёСЂРѕРІР°РЅРЅРѕРіРѕ РјР°СЃСЃРёРІР°:" << endl;
 	 out();
  }
 
 
- // //СОРТИРОВКА ВСТАВКОЙ
+ // //РЎРћР РўРР РћР’РљРђ Р’РЎРўРђР’РљРћР™
  extern void insert_sort(int count)
  {
 	 register int i, j;
@@ -259,13 +259,13 @@ extern int regenerate_array()
 
 	 auto end = high_resolution_clock::now();
 	 duration<double> interval = end - start;
-	 cout << "\nВремя затраченное на сортировку методом вставки: " << fixed << setprecision(2) << interval.count() << " секунд" << endl;
-	 cout << "Первые 10 элементов отсортированного массива:" << endl;
+	 cout << "\nР’СЂРµРјСЏ Р·Р°С‚СЂР°С‡РµРЅРЅРѕРµ РЅР° СЃРѕСЂС‚РёСЂРѕРІРєСѓ РјРµС‚РѕРґРѕРј РІСЃС‚Р°РІРєРё: " << fixed << setprecision(2) << interval.count() << " СЃРµРєСѓРЅРґ" << endl;
+	 cout << "РџРµСЂРІС‹Рµ 10 СЌР»РµРјРµРЅС‚РѕРІ РѕС‚СЃРѕСЂС‚РёСЂРѕРІР°РЅРЅРѕРіРѕ РјР°СЃСЃРёРІР°:" << endl;
 	 out();
  }
 
 
- //СОРТИРОВКА ШЕЛЛА
+ //РЎРћР РўРР РћР’РљРђ РЁР•Р›Р›Рђ
  extern void shell_sort(int count)
  {
 	 register int i, j, gap, sorted;
@@ -285,13 +285,13 @@ extern int regenerate_array()
 
 	 auto end = high_resolution_clock::now();
 	 duration<double> interval = end - start;
-	 cout << "\nВремя затраченное на сортировку методом Шелла: " << fixed << setprecision(2) << interval.count() << " секунд" << endl;
-	 cout << "Первые 10 элементов отсортированного массива:" << endl;
+	 cout << "\nР’СЂРµРјСЏ Р·Р°С‚СЂР°С‡РµРЅРЅРѕРµ РЅР° СЃРѕСЂС‚РёСЂРѕРІРєСѓ РјРµС‚РѕРґРѕРј РЁРµР»Р»Р°: " << fixed << setprecision(2) << interval.count() << " СЃРµРєСѓРЅРґ" << endl;
+	 cout << "РџРµСЂРІС‹Рµ 10 СЌР»РµРјРµРЅС‚РѕРІ РѕС‚СЃРѕСЂС‚РёСЂРѕРІР°РЅРЅРѕРіРѕ РјР°СЃСЃРёРІР°:" << endl;
 	 out();
  }
  
 
- //ТАЙМЕР ХОАРА
+ //РўРђР™РњР•Р  РҐРћРђР Рђ
  extern void hoare_sort_t(int count, int l, int r)
  {
 	 cop(count);
@@ -299,13 +299,13 @@ extern int regenerate_array()
 	 hoare_sort(l, r);
 	 auto end = high_resolution_clock::now();
 	 duration<double> interval = end - start;
-	 cout << "\nВремя затраченное на сортировку методом Хоара: " << fixed << setprecision(2) << interval.count() << " секунд" << endl;
-	 cout << "Первые 10 элементов отсортированного массива:" << endl;
+	 cout << "\nР’СЂРµРјСЏ Р·Р°С‚СЂР°С‡РµРЅРЅРѕРµ РЅР° СЃРѕСЂС‚РёСЂРѕРІРєСѓ РјРµС‚РѕРґРѕРј РҐРѕР°СЂР°: " << fixed << setprecision(2) << interval.count() << " СЃРµРєСѓРЅРґ" << endl;
+	 cout << "РџРµСЂРІС‹Рµ 10 СЌР»РµРјРµРЅС‚РѕРІ РѕС‚СЃРѕСЂС‚РёСЂРѕРІР°РЅРЅРѕРіРѕ РјР°СЃСЃРёРІР°:" << endl;
 	 out();
  }
 
 
- //СОРТИРОВКА ХОАРА
+ //РЎРћР РўРР РћР’РљРђ РҐРћРђР Рђ
  extern void hoare_sort(int l, int r)
  {
 	 register int i, j, sr;
@@ -330,7 +330,7 @@ extern int regenerate_array()
  }
 
 
- //БОЛОТНАЯ СОРТИРОВКА
+ //Р‘РћР›РћРўРќРђРЇ РЎРћР РўРР РћР’РљРђ
  extern void bogosort(int count)
  {
 	 register int i, j;
@@ -362,17 +362,17 @@ extern int regenerate_array()
 
 	 auto end = high_resolution_clock::now();
 	 duration<double> interval = end - start;
-	 cout << "\nВремя затраченное на болотную сортировку: " << fixed << setprecision(2) << interval.count() << " секунд" << endl;
-	 cout << "Первые 10 элементов отсортированного массива:" << endl;
+	 cout << "\nР’СЂРµРјСЏ Р·Р°С‚СЂР°С‡РµРЅРЅРѕРµ РЅР° Р±РѕР»РѕС‚РЅСѓСЋ СЃРѕСЂС‚РёСЂРѕРІРєСѓ: " << fixed << setprecision(2) << interval.count() << " СЃРµРєСѓРЅРґ" << endl;
+	 cout << "РџРµСЂРІС‹Рµ 10 СЌР»РµРјРµРЅС‚РѕРІ РѕС‚СЃРѕСЂС‚РёСЂРѕРІР°РЅРЅРѕРіРѕ РјР°СЃСЃРёРІР°:" << endl;
 	 out();
  }
 
 
- //ПОИСК
+ //РџРћРРЎРљ
  extern void find(int count)
  {
 	 int i, target;
-	 cout << "\nВведите элемент для поиска: ";
+	 cout << "\nР’РІРµРґРёС‚Рµ СЌР»РµРјРµРЅС‚ РґР»СЏ РїРѕРёСЃРєР°: ";
 	 cin >> target;
 	 auto start = high_resolution_clock::now();
 
@@ -380,26 +380,26 @@ extern int regenerate_array()
 	 {
 		 if (a1[i] == target)
 		 {
-			 cout << "Элемент найден! Его индекс: " << i << endl;
+			 cout << "Р­Р»РµРјРµРЅС‚ РЅР°Р№РґРµРЅ! Р•РіРѕ РёРЅРґРµРєСЃ: " << i << endl;
 
 			 auto end = high_resolution_clock::now();
 			 duration<double> interval = end - start;
-			 cout << "Время затраченное на линейный поиск: " << fixed << setprecision(2) << interval.count() << " секунд" << endl;
+			 cout << "Р’СЂРµРјСЏ Р·Р°С‚СЂР°С‡РµРЅРЅРѕРµ РЅР° Р»РёРЅРµР№РЅС‹Р№ РїРѕРёСЃРє: " << fixed << setprecision(2) << interval.count() << " СЃРµРєСѓРЅРґ" << endl;
 			 cout << "__________________________________" << endl << endl << endl;
 			 return;
 		 }
 	 }
 	 auto end = high_resolution_clock::now();
-	 cout << "Элемент не найден в массиве" << endl;
+	 cout << "Р­Р»РµРјРµРЅС‚ РЅРµ РЅР°Р№РґРµРЅ РІ РјР°СЃСЃРёРІРµ" << endl;
 	 cout << "__________________________________" << endl << endl << endl;
  }
 
 
- //БИНАРНЫЙ ПОИСК 
+ //Р‘РРќРђР РќР«Р™ РџРћРРЎРљ 
  extern void find_b(int count)
  {
 	 int i, target, left = 0, right = count - 1, middle;
-	 cout << "\nВведите элемент для поиска: ";
+	 cout << "\nР’РІРµРґРёС‚Рµ СЌР»РµРјРµРЅС‚ РґР»СЏ РїРѕРёСЃРєР°: ";
 	 cin >> target;
 	 auto start = high_resolution_clock::now();
 
@@ -408,11 +408,11 @@ extern int regenerate_array()
 		 middle = left + (right - left) / 2;
 		 if (a1[middle] == target)
 		 {
-			 cout << "Элемент найден! Его индекс: " << middle << endl;
+			 cout << "Р­Р»РµРјРµРЅС‚ РЅР°Р№РґРµРЅ! Р•РіРѕ РёРЅРґРµРєСЃ: " << middle << endl;
 
 			 auto end = high_resolution_clock::now();
 			 duration<double> interval = end - start;
-			 cout << "Время затраченное на бинарный поиск: " << fixed << setprecision(2) << interval.count() << " секунд" << endl;
+			 cout << "Р’СЂРµРјСЏ Р·Р°С‚СЂР°С‡РµРЅРЅРѕРµ РЅР° Р±РёРЅР°СЂРЅС‹Р№ РїРѕРёСЃРє: " << fixed << setprecision(2) << interval.count() << " СЃРµРєСѓРЅРґ" << endl;
 			 cout << "__________________________________" << endl << endl << endl;
 			 return;
 		 }
@@ -427,31 +427,31 @@ extern int regenerate_array()
 	 }
 
 	 auto end = high_resolution_clock::now();
-	 cout << "Элемент не найден в массиве" << endl;
+	 cout << "Р­Р»РµРјРµРЅС‚ РЅРµ РЅР°Р№РґРµРЅ РІ РјР°СЃСЃРёРІРµ" << endl;
 	 cout << "__________________________________" << endl << endl << endl;
  }
 
 
- //CОРТИРОВКА
+ //CРћР РўРР РћР’РљРђ
  extern void sort(int sch)
  {
 	 if (sch == 0)
 	 {
-		 cout << "\n\nНет запиcей!\n";
+		 cout << "\n\nРќРµС‚ Р·Р°РїРёcРµР№!\n";
 	 }
 	 else
 	 {
 		 register int sw;
-		 cout << "\n\nВведите по какому полю осуществлять сортировку:\n";
-		 cout << "1- по фамилии в алфавитном порядке\n";
-		 cout << "2- по году рождения в возрастающем порядке\n";
-		 cout << "3- по году поступления в БГУИР в возрастающем порядке\n";
+		 cout << "\n\nР’РІРµРґРёС‚Рµ РїРѕ РєР°РєРѕРјСѓ РїРѕР»СЋ РѕСЃСѓС‰РµСЃС‚РІР»СЏС‚СЊ СЃРѕСЂС‚РёСЂРѕРІРєСѓ:\n";
+		 cout << "1- РїРѕ С„Р°РјРёР»РёРё РІ Р°Р»С„Р°РІРёС‚РЅРѕРј РїРѕСЂСЏРґРєРµ\n";
+		 cout << "2- РїРѕ РіРѕРґСѓ СЂРѕР¶РґРµРЅРёСЏ РІ РІРѕР·СЂР°СЃС‚Р°СЋС‰РµРј РїРѕСЂСЏРґРєРµ\n";
+		 cout << "3- РїРѕ РіРѕРґСѓ РїРѕСЃС‚СѓРїР»РµРЅРёСЏ РІ Р‘Р“РЈРР  РІ РІРѕР·СЂР°СЃС‚Р°СЋС‰РµРј РїРѕСЂСЏРґРєРµ\n";
 		 cin >> sw;
 		 while (sw <= 0 || sw > 3 || cin.fail() || cin.peek() != '\n')
 		 {
 			 cin.clear();
 			 cin.ignore(1000, '\n');
-			 cout << "Ошибка ввода: номер действия должен быть положительным целым числом от 1 до 3. Повторный ввод: ";
+			 cout << "РћС€РёР±РєР° РІРІРѕРґР°: РЅРѕРјРµСЂ РґРµР№СЃС‚РІРёСЏ РґРѕР»Р¶РµРЅ Р±С‹С‚СЊ РїРѕР»РѕР¶РёС‚РµР»СЊРЅС‹Рј С†РµР»С‹Рј С‡РёСЃР»РѕРј РѕС‚ 1 РґРѕ 3. РџРѕРІС‚РѕСЂРЅС‹Р№ РІРІРѕРґ: ";
 			 cin >> sw;
 		 }
 		 switch (sw)
@@ -465,7 +465,7 @@ extern int regenerate_array()
  }
 
 
- //CОРТИРОВКА по фамилии
+ //CРћР РўРР РћР’РљРђ РїРѕ С„Р°РјРёР»РёРё
  extern void sort_fio(int sch)
  {
 	 register int i, j;
@@ -477,7 +477,7 @@ extern int regenerate_array()
 				 mas[j - 1] = mas[j];
 				 mas[j] = t;
 			 }
-	 cout << "\n\nРезультат (метод пузырька):\n";
+	 cout << "\n\nР РµР·СѓР»СЊС‚Р°С‚ (РјРµС‚РѕРґ РїСѓР·С‹СЂСЊРєР°):\n";
 	 for (i = 0; i < sch; i++)
 	 {
 		 cout << "\n";
@@ -486,7 +486,7 @@ extern int regenerate_array()
  }
 
 
- //СОРТИРОВКА по году рождения
+ //РЎРћР РўРР РћР’РљРђ РїРѕ РіРѕРґСѓ СЂРѕР¶РґРµРЅРёСЏ
  extern void sort_bith(int sch)
  {
 	 register int i, j;
@@ -501,7 +501,7 @@ extern int regenerate_array()
 			 j--;
 		 }
 	 }
-	 cout << "\n\nРезультат (метод вставки):\n";
+	 cout << "\n\nР РµР·СѓР»СЊС‚Р°С‚ (РјРµС‚РѕРґ РІСЃС‚Р°РІРєРё):\n";
 	 for (i = 0; i < sch; i++)
 	 {
 		 cout << "\n";
@@ -510,7 +510,7 @@ extern int regenerate_array()
  }
 
 
- //СОРТИРОВКА по году поступления в БГУИР
+ //РЎРћР РўРР РћР’РљРђ РїРѕ РіРѕРґСѓ РїРѕСЃС‚СѓРїР»РµРЅРёСЏ РІ Р‘Р“РЈРР 
  extern void sort_ya(int sch)
  {
 	 register int i, j, gap, sorted;
@@ -527,7 +527,7 @@ extern int regenerate_array()
 				 }
 		 } while (sorted);
 
-	 cout << "\n\nРезультат (метод Шелла):\n";
+	 cout << "\n\nР РµР·СѓР»СЊС‚Р°С‚ (РјРµС‚РѕРґ РЁРµР»Р»Р°):\n";
 	 for (i = 0; i < sch; i++)
 	 {
 		 cout << "\n";

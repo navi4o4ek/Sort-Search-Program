@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+п»ї<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -29,7 +29,7 @@
     <VCProjectVersion>17.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
     <ProjectGuid>{30f94011-9839-453d-8b19-1c44c724116f}</ProjectGuid>
-    <RootNamespace>ЛР11Алгоритмыметодовсортировкиипоиска</RootNamespace>
+    <RootNamespace>Р›Р 11РђР»РіРѕСЂРёС‚РјС‹РјРµС‚РѕРґРѕРІСЃРѕСЂС‚РёСЂРѕРІРєРёРёРїРѕРёСЃРєР°</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
